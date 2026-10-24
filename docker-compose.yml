@@ -1,0 +1,21 @@
+services:
+  finguide-bot:
+    build: .
+    container_name: finguide-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DATABASE_PATH=/app/db/finguide.db
+    volumes:
+      # Именованный том, чтобы данные переживали пересоздание контейнера
+      - finguide-db:/app/db
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  finguide-db:

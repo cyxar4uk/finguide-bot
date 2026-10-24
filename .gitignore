@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.venv/
+env/
+.pytest_cache/
+.coverage
+build/
+dist/
+*.egg-info/
+
+# Secrets / env
+.env
+.env.*
+!.env.example
+
+# Database (содержит данные пользователей бота)
+*.db
+*.db-journal
+*.sqlite3
+
+# Скачанные страницы и производные данные сайта fa.ru — сторонний контент, не публикуется
+/data/fa_pages/
+/data/*.json
+
+# Приватные/черновые материалы (остаются на диске, не публикуются)
+/_private/
+
+# Logs, IDE, OS
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
